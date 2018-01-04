@@ -18,6 +18,12 @@
 
 /* Brute Force Solution
  * O(n^2)
+ * Explanation: 
+ * Iterate through each element in the 
+ * array and subtract each element from the targetSum
+ * to determine if the difference exists in the array.
+ * The inner loop will determine if the difference exists
+ * and short-circuit if the needed value is found. 
  */
 // function twoNumberSum(array, targetSum) {
 //   for (let i = 0; i < array.length; i++) {
@@ -32,6 +38,12 @@
 
 /* Optimizied Solution
  * O(2n) -> O(n)
+ * Explanation: 
+ * Construct a hash table mapping each key which is every 
+ * element in the array to its index position in the array.
+ * I prefer to setup in this manner because setting up a hashmap 
+ * may need different implementations therefore, this is the more
+ * modular approach.
  */
 function twoNumberSum(array, targetSum) {
   // Construct hashmap with values mapped to location in array.
@@ -47,7 +59,6 @@ function twoNumberSum(array, targetSum) {
       return (+key < need) ? [+key, need] : [need, +key]
     }
   }
-
   return []
 }
 

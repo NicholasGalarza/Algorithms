@@ -3,7 +3,7 @@
  * its characters are reversed.
  */
 
- // Runtime O(n) | O(1) space
+// Runtime O(n) | O(1) space
 const isPalindrome = (string) => string.split("").reverse().join("") === string
 
 // Runtime O(n) | O(1) space

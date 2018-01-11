@@ -84,6 +84,3 @@ class BST {
     }
   }
 }
-
-// Do not edit the line below.
-exports.BST = BST;

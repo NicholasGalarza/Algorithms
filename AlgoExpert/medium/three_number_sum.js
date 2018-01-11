@@ -23,33 +23,33 @@
  *    move the left pointer up by one position. 
  *  4.3: If the sum values are greater than the target sum, 
  *    move the right pointer one position to the left.
- */ 
+ */
 function threeNumberSum(array, targetSum) {
-  
-  const sortedArray = array.sort((a,b) => a-b), 
+
+  const sortedArray = array.sort((a, b) => a - b),
     ALENGTH = sortedArray.length
-	
-	let currentSum = Infinity, 
-		result = []
-		
-	for (let i = 0; i < ALENGTH; i++) {
-		let left = i+1,
-				right = ALENGTH-1
-		
-		while (left < right) {
-			currentSum = sortedArray[i] + sortedArray[left] + sortedArray[right]
-			
-			if (currentSum === targetSum) {
-				result.push([sortedArray[i], sortedArray[left], sortedArray[right]])
-				left++
-				right--
-			} else if (currentSum < targetSum) {
-				left++
-			} else {
-				right--
-			}
-		}
-	}
-	
-	return result
+
+  let currentSum = Infinity,
+    result = []
+
+  for (let i = 0; i < ALENGTH; i++) {
+    let left = i + 1,
+      right = ALENGTH - 1
+
+    while (left < right) {
+      currentSum = sortedArray[i] + sortedArray[left] + sortedArray[right]
+
+      if (currentSum === targetSum) {
+        result.push([sortedArray[i], sortedArray[left], sortedArray[right]])
+        left++
+        right--
+      } else if (currentSum < targetSum) {
+        left++
+      } else {
+        right--
+      }
+    }
+  }
+
+  return result
 }

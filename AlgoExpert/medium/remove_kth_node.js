@@ -1,7 +1,7 @@
 /* Problem
  * Given a singly-linked list, remove the kth node from 
  * the back of the linked-list.
- */ 
+ */
 
 // Runtime O(n) | O(1) Space \\
 /* Explanation: 

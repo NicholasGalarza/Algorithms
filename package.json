@@ -1,0 +1,23 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Practice for whiteboard problems",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicholasGalarza/Algorithms.git"
+  },
+  "author": "Nicholas Galarza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NicholasGalarza/Algorithms/issues"
+  },
+  "homepage": "https://github.com/NicholasGalarza/Algorithms#readme",
+  "dependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.0"
+  }
+}

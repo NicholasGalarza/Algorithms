@@ -1,7 +1,7 @@
 // Runtime O(n) | O(n) Space
 /* Explanation
  * Using the piece-wise function: 
- * maxSum[i] = MAX: { maxSum[i-1]
+ * maxSum[i] = MAX: { maxSum[i-1], 
  *                    maxSum[i-2] + array[i]}
  * Each maxSum will be stored inside of 
  * another array, hence each array the space 

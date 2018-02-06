@@ -20,7 +20,7 @@ class TrieNode {
     for (let i = 0; i < string.length; i++) {
       let letter = string.charAt(i),
         idx = letter.charCodeAt() - 'a'.charCodeAt()
-        console.log(letter)
+
       if (currentNode.children[idx] == null) {
         currentNode.children[idx] = new TrieNode()
         currentNode.children[idx].parent = currentNode

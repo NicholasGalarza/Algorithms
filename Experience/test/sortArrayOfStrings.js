@@ -14,11 +14,11 @@ describe('Sort Array of Strings', () => {
     assert.equal(sortArrayOfStrings(test1), "abcdefg")
   })
 
-  xit('Should return a sorted string with false characters removed', () => {
+  it('Should return a sorted string with false characters removed', () => {
     assert.equal(sortArrayOfStrings(test2), "abcdefg")
   })
 
-  xit('Should return an empty string when there is nothing but false characters', () => {
+  it('Should return an empty string when there is nothing but false characters', () => {
     assert.equal(sortArrayOfStrings(["?", ",", "%"]), "")
   })
 

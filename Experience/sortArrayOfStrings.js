@@ -5,6 +5,7 @@
  * characters of the alphabet.
  */
 
+// O(n^2) Complexity | O(n^2) Space
 class TrieNode {
 
   constructor() {
@@ -31,9 +32,7 @@ class TrieNode {
     currentNode.occurrences++
   }
 
-  sort() {
-    return this.preOrderTraverse(this, [], []).join("")
-  }
+  sort() { return this.preOrderTraverse(this).join("") }
 
   preOrderTraverse(tree = this, word = [], result = []) {
 
@@ -41,6 +40,8 @@ class TrieNode {
       for (let char of word) {
         result.push(char)
       }
+      // Check and see how the tree traversal here
+      // console.log(result)
     }
 
     for (let i = 0; i < 26; i++) {

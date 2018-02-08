@@ -1,5 +1,5 @@
+// Runtime O(n) | O(1) Space
 function subarraySort(array) {
-  // Write your code here.
   let orderMin = Infinity, orderMax = -Infinity
 
   const isOutOfOrder = (idx, num, arr) => {

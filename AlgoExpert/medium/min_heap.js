@@ -3,55 +3,50 @@ class MinHeap {
     this.heap = this.buildHeap(array);
   }
 
-  // Runtime O(n) | Space O(1)
   buildHeap(array) {
     const firstParent = Math.floor((array.length - 2) / 2)
     for (let currentIdx = firstParent; currentIdx >= 0; currentIdx--) {
-      this.siftDown(currentIdx, array.length - 1, array)
+      this.siftDown(currentIdx, array.length, array)
     }
     return array
   }
 
-  // Runtime O(log(n)) | Space O(1)
-  siftDown(idx, end, heap) {
-    let childOne = 2 * idx + 1
+  siftDown(idx, heapSize, heap) {
+    let childOneIdx = this.getChildOne(idx)
 
-    while (childOne <= end) {
-      const childTwo = (2 * idx + 2 <= end) ? 2 * idx + 2 : -1,
-        swapIdx = (childTwo !== -1 && heap[childTwo] < heap[childOne]) ? childTwo : childOne
+    while (childOneIdx < heapSize) {
+      const tempChildTwoIdx = this.getChildTwo(idx),
+        childTwoIdx = (tempChildTwoIdx < heapSize) ? tempChildTwoIdx : -1,
+        idxToSwap = (childTwoIdx !== -1 && heap[childTwoIdx] < heap[childOneIdx]) ? childTwoIdx : childOneIdx
 
-      if (heap[swapIdx] < heap[idx]) {
-        this.swap(idx, swapIdx, heap)
-        idx = swapIdx
-        childOne = idx * 2 + 1
+      if (heap[idxToSwap] < heap[idx]) {
+        this.swap(idx, idxToSwap, heap)
+        idx = idxToSwap
+        childOneIdx = this.getChildOne(idx)
       } else {
-        return;
+        break;
       }
     }
   }
 
-  // Runtime O(log(n)) | Space O(1)
   siftUp(idx, heap) {
-    let parentIdx = Math.floor((idx - 1) / 2)
+    let parentIdx = this.getParent(idx)
     while (idx > 0 && heap[idx] < heap[parentIdx]) {
       this.swap(idx, parentIdx, heap)
       idx = parentIdx
-      parentIdx = Math.floor((idx - 1) / 2)
+      parentIdx = this.getParent(idx)
     }
   }
 
-  // Runtime O(1) | Space O(1)
   peek() { return this.heap[0] }
 
-  // Runtime O(log(n)) | Space O(1)
   remove() {
     this.swap(0, this.heap.length - 1, this.heap)
     const deletedNode = this.heap.pop()
-    this.siftDown(0, this.heap.length - 1, this.heap)
+    this.siftDown(0, this.heap.length, this.heap)
     return deletedNode
   }
 
-  // Runtime O(log(n)) | Space O(1)
   insert(value) {
     this.heap.push(value)
     this.siftUp(this.heap.length - 1, this.heap)
@@ -62,4 +57,8 @@ class MinHeap {
     heap[j] = heap[i]
     heap[i] = temp
   }
+
+  getChildOne(idx) { return 2 * idx + 1 }
+  getChildTwo(idx) { return 2 * idx + 2 }
+  getParent(idx) { return Math.floor((idx - 1) / 2) }
 }

@@ -29,9 +29,7 @@ class MinHeap {
         this.swap(idx, idxToSwap, heap)
         idx = idxToSwap
         childOneIdx = this.getChildOne(idx)
-      } else {
-        break;
-      }
+      } else { break }
     }
   }
 

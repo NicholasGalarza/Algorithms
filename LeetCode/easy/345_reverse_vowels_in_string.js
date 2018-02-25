@@ -36,34 +36,34 @@
  * @return {string}
  */
 const reverseVowels = (s) => {
-    
+
   s = s.split("")
-  let left = 0, right = s.length-1
-  
-  const isVowel = (char) => /[aeiouAEIOU]/.test(char)
-  
+  let left = 0, right = s.length - 1
+
+  const isVowel = char => /[aeiouAEIOU]/.test(char)
+
   const swap = (left, right) => {
-      let temp = s[left]
-      s[left] = s[right]
-      s[right] = temp
+    const temp = s[left]
+    s[left] = s[right]
+    s[right] = temp
   }
-  
+
   while (left < right) {
-      if (!isVowel(s[left])) {
-          left++
-          continue
-      }
-      
-      if(!isVowel(s[right])) {
-          right--
-          continue
-      }
-      
-      swap(left, right)
-      
+    if (!isVowel(s[left])) {
       left++
+      continue
+    }
+
+    if (!isVowel(s[right])) {
       right--
+      continue
+    }
+
+    swap(left, right)
+
+    left++
+    right--
   }
-  
+
   return s.join("")
 }

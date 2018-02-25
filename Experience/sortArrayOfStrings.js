@@ -40,7 +40,7 @@ class TrieNode {
       for (let char of word) {
         result.push(char)
       }
-      // Check and see how the tree traversal here
+      // Check and see the tree traversal here
       // console.log(result)
     }
 
@@ -53,7 +53,6 @@ class TrieNode {
         word.pop()
       }
     }
-
     return result
   }
 }

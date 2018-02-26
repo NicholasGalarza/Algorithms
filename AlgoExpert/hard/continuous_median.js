@@ -1,6 +1,3 @@
-// Do not edit the class below except for
-// the insert method. Feel free to add new
-// properties and methods to the class.
 class ContinuousMedianHandler {
   constructor(value) {
     this.lowerHalf = new Heap(this.MAX_HEAP, [])
@@ -15,11 +12,11 @@ class ContinuousMedianHandler {
       this.greaterHalf.insert(number)
     }
 
-    if (Math.abs(this.lowerHalf.heapSize - this.lowerHalf.heapSize) === 2) {
-      this.rebalanceHeaps(this.lowerHalf, this.greaterHalf)
+    if (Math.abs(this.lowerHalf.heapSize - this.greaterHalf.heapSize) === 2) {
+      this.rebalanceHeaps(this.greaterHalf, this.lowerHalf)
     }
 
-    this.updateMedian(this.lowerHalf, this.greaterHalf)
+    this.updateMedian(this.greaterHalf, this.lowerHalf)
   }
 
   rebalanceHeaps(minHeap, maxHeap) {
@@ -34,7 +31,7 @@ class ContinuousMedianHandler {
 
   updateMedian(minHeap, maxHeap) {
     if (minHeap.heapSize === maxHeap.heapSize) {
-      this.median = this.calculateAverage(minHeap.peek(), maxHeap.peek())
+      this.median = (minHeap.peek() + maxHeap.peek()) / 2
     } else if (minHeap.heapSize > maxHeap.heapSize) {
       this.median = minHeap.peek()
     } else {
@@ -43,7 +40,6 @@ class ContinuousMedianHandler {
   }
 
   getMedian() { return this.median }
-  calculateAverage(a, b) { return (a + b) / 2 }
   MIN_HEAP(a, b) { return a < b }
   MAX_HEAP(a, b) { return a > b }
 }
@@ -74,7 +70,7 @@ class Heap {
         this.swapElements(idx, idxToSwap, heap)
         idx = idxToSwap
         childOneIdx = this.getFirstChild(idx)
-      } else { break }
+      } else { return }
     }
   }
 
@@ -114,5 +110,4 @@ class Heap {
   getParent(idx) { return Math.floor((idx - 1) / 2) }
 }
 
-// Do not edit the line below.
-exports.ContinuousMedianHandler = ContinuousMedianHandler;
+

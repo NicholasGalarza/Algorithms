@@ -1,3 +1,4 @@
+// Runtime O(log(n)) | Space O(1)
 function shiftedBinarySearch(array, target) {
   let left = 0, right = array.length - 1
 

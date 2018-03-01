@@ -23,11 +23,11 @@ class Heap {
     return array
   }
 
-  siftDown(idx, heapSize, heap) {
+  siftDown(idx, endPoint, heap) {
     let childOneIdx = this.getChildOne(idx)
 
-    while (childOneIdx < heapSize) {
-      const childTwoIdx = (this.getChildTwo(idx) < heapSize) ? this.getChildTwo(idx) : null
+    while (childOneIdx < endPoint) {
+      const childTwoIdx = (this.getChildTwo(idx) < endPoint) ? this.getChildTwo(idx) : null
       const idxToSwap = (childTwoIdx && heap[childTwoIdx] > heap[childOneIdx]) ? childTwoIdx : childOneIdx
 
       if (heap[idxToSwap] > heap[idx]) {

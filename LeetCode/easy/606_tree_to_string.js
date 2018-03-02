@@ -17,8 +17,8 @@ const tree2str = t => {
   const left = (t.left) ? tree2str(t.left) : null,
     right = (t.right) ? tree2str(t.right) : null
 
-  if (left && right) result += "(" + left + ")(" + right + ")";
-  else if (right) result += "()(" + right + ")";
-  else if (left) result += "(" + left + ")";
-  return result;
-};
+  if (left && right) result += "(" + left + ")(" + right + ")"
+  else if (right) result += "()(" + right + ")"
+  else if (left) result += "(" + left + ")"
+  return result
+}

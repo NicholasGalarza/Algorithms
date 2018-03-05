@@ -6,8 +6,8 @@
  *          4
  *        /   \
  *       2     6
- *      / \   / 
- *     3   1 5   
+ *      / \   /
+ *     3   1 5
  */
 /*
  * @param {string} str
@@ -36,7 +36,7 @@ function parseStringHelper(str, si, ei) {
  * @param {string, number, number} str, si, ei
  * @return {tree}
  */
-function findIndex(str, start, end) {
+function findIndex(str, si, ei) {
   const subtree = []
 
   for (let i = si; i < ei; i++) {

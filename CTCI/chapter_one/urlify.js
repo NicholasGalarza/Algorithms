@@ -19,7 +19,7 @@ function URLify(str, tSize) {
     }
   }
 
-  return url
+  return url.join("")
 }
 /* In-place Solution
  * @params: {string, int} str, tSize

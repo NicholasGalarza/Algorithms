@@ -2,13 +2,14 @@
  * Given a string, write a function to
  * check if it is a permutation of a 
  * palindrome.
- * 
+ */
+
+/*
  * @params: {string}, str
  * @return: {boolean}
  * 
  * Runtime O(n) | Space O(n)
  */
-
 function isPermutationPalindrome(str) {
   const map = {}
 

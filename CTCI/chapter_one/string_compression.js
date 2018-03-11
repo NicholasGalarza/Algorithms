@@ -26,8 +26,9 @@ function compressString(str) {
       repeated = 1
     }
   }
-  // edge: if last elements repeat, push repeated to result
-  if (repeated > 0) temp.push(repeated)
+  // edge: push repeated to result since loop 
+  // exists before adding the count
+  temp.push(repeated)
 
   return (str.length < temp.length) ? str : temp.join("")
 }

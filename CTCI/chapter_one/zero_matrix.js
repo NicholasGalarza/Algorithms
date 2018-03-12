@@ -21,11 +21,13 @@ function zeroMatrix(matrix) {
       }
     }
   }
-
+  console.log('row', row)
+  console.log('col', col)
   nullifyRowHelper(matrix, row)
   nullifyColumnHelper(matrix, col)
   return matrix
 }
+
 
 function nullifyRowHelper(matrix, R) {
   for (let i = 0; i < R.length; i++) {

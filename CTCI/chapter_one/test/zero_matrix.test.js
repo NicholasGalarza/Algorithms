@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const { zeroMatrix } = require('../zero_matrix')
 
-describe('Zero out row and column if zero is present in matrix', () => {
+xdescribe('Zero out row and column if zero is present in matrix', () => {
   const test1 =
     [[1, 1, 1, 1],
     [1, 1, 1, 1],

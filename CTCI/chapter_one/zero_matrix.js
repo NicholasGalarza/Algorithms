@@ -21,8 +21,7 @@ function zeroMatrix(matrix) {
       }
     }
   }
-  console.log('row', row)
-  console.log('col', col)
+ 
   nullifyRowHelper(matrix, row)
   nullifyColumnHelper(matrix, col)
   return matrix
@@ -30,6 +29,7 @@ function zeroMatrix(matrix) {
 
 
 function nullifyRowHelper(matrix, R) {
+  console.log(R)
   for (let i = 0; i < R.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       const curr_row = R[i]
@@ -39,6 +39,7 @@ function nullifyRowHelper(matrix, R) {
 }
 
 function nullifyColumnHelper(matrix, C) {
+  console.log(C)
   for (let i = 0; i < C.length; i++) {
     for (let j = 0; j < matrix[0].length; j++) {
       const column = C[i]

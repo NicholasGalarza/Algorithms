@@ -7,7 +7,7 @@
  * Ex: 'waterbottle', 'erbottlewat' => true
  */
 
-/* 
+/*
  * @params {string, string} s1, s2
  * @return {boolean}
  */

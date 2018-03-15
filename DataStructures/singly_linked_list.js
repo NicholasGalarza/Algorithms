@@ -62,6 +62,7 @@ class SinglyLinkedList {
       cache.push(current.value)
       current = current.next
     }
+    console.log('list', cache)
     return cache
   }
 }

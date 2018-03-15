@@ -43,7 +43,7 @@ class DoublyLinkedList {
     if (this.head.value === value) {
       this.head = this.head.next
       this.head.previous = null
-      return
+      return this
     }
 
     let current = this.head.next
@@ -57,7 +57,7 @@ class DoublyLinkedList {
           current.previous.next = null
           this.tail = current.previous
         }
-        return
+        return this
       }
       current = current.next
     }
@@ -70,6 +70,17 @@ class DoublyLinkedList {
       current = current.next
     }
     return this
+  }
+
+  values() {
+    let current = this.head
+    const cache = []
+    while (current !== null) {
+      cache.push(current.value)
+      current = current.next
+    }
+    console.log('list', cache)
+    return cache
   }
 }
 

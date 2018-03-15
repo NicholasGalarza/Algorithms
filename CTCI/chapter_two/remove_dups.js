@@ -57,4 +57,4 @@ function removeDuplicates(LL) {
   return LL
 }
 
-removeDuplicates(list).printAll()
+removeDuplicates(list).values()

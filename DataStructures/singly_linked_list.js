@@ -23,7 +23,7 @@ class SinglyLinkedList {
     while (current.next !== null) {
       current = current.next
     }
-    
+
     current.next = node
     return this
   }
@@ -53,6 +53,16 @@ class SinglyLinkedList {
       current = current.next
     }
     return this
+  }
+
+  values() {
+    let current = this.head
+    const cache = []
+    while (current !== null) {
+      cache.push(current.value)
+      current = current.next
+    }
+    return cache
   }
 }
 

@@ -17,14 +17,15 @@ class DoublyLinkedList {
     const node = new Node(value)
     this.length++
 
-    if (this.head == null) {
+    if (!this.head && !this.tail) {
       this.head = node
       this.tail = node
-    } else if (this.head !== this.tail) {
+    } else if (this.length) {
       node.previous = this.tail
       this.tail.next = node
       this.tail = node
     }
+    return this
   }
 
   search(value) {
@@ -38,7 +39,8 @@ class DoublyLinkedList {
 
   remove(value) {
     this.length--
-    if (this.head === value) {
+
+    if (this.head.value === value) {
       this.head = this.head.next
       this.head.previous = null
       return
@@ -53,6 +55,7 @@ class DoublyLinkedList {
           current.previous.next = current.next
         } else {
           current.previous.next = null
+          this.tail = current.previous
         }
         return
       }
@@ -60,3 +63,5 @@ class DoublyLinkedList {
     }
   }
 }
+
+module.exports.DoublyLinkedList = DoublyLinkedList

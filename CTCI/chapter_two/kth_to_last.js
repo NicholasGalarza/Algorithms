@@ -12,10 +12,7 @@ const { SinglyLinkedList } = require('../../DataStructures/singly_linked_list')
  * @return {singly_linked_list}
  */
 
-const list = new SinglyLinkedList()
-list.insert(3).insert(5).insert(7).insert(9).insert(11)
-
-function removeLastK(list, k) {
+function removeKthLast(list, k) {
   let current = list.head,
     ahead = current
 
@@ -34,14 +31,13 @@ function removeLastK(list, k) {
   }
 
   // Operation to remove kth to last
-  // (2) current = {first, anywhere else} in list
-  if (ahead === null) {
+  if (ahead === null) { // if `current` is at start
     list.head = list.head.next
-  } else {
+  } else { // anywhere else in the list
     current.next = current.next.next
   }
 
   return list
 }
-// [3, 5, 7, 9, 11]
-removeLastK(list, 1).values()
+
+module.exports.removeKthLast = removeKthLast

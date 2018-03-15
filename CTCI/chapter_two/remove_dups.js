@@ -12,27 +12,22 @@ const list = new SinglyLinkedList()
 list.insert(5).insert(6).insert(7).insert(6)
 
 function removeDuplicates(LL) {
-  let current = LL.head
+  let current = LL.head,
+    behind = null
+
   const set = {}
 
   while (current !== null) {
-    if (!(current.value in set)) {
-      set[current.value] = false
+    const value = current.value
+    if (!(value in set)) {
+      set[value] = false
+      behind = current
     } else {
-      set[current.value] = true
+      set[value] = true
+      behind.next = current.next
     }
     current = current.next
   }
-
-  current = LL.head // reset
-
-  while (current !== null) {
-    if (set[current.value]) {
-      LL.remove(current.value)
-    }
-    current = current.next
-  }
-
   LL.printAll()
 }
 

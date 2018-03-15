@@ -10,6 +10,7 @@ const { SinglyLinkedList } = require('../../DataStructures/singly_linked_list')
  * Two Pointers Solutions
  * @params {singly_linked_list, int} list, k
  * @return {singly_linked_list}
+ * Runtime O(n) | Space O(1)
  */
 
 function removeKthLast(list, k) {

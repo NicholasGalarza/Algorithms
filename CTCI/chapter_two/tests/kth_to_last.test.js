@@ -2,7 +2,7 @@ const { SinglyLinkedList } = require('../../../DataStructures/singly_linked_list
 const { assert } = require('chai')
 const { removeKthLast } = require('../kth_to_last')
 
-describe('Implement the solution remove kth to last', () => {
+xdescribe('Implement the solution remove kth to last', () => {
   let test1
 
   beforeEach(() => {

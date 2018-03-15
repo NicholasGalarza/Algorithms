@@ -4,7 +4,8 @@
   "description": "Practice for whiteboard problems",
   "main": "index.js",
   "scripts": {
-    "test": "mocha CTCI/**/test/*.test.js",
+    "test": "mocha CTCI/chapter_two/tests/*.test.js",
+    "ch1": "mocha CTCI/chapter_one/tests/*.test.js",
     "exp": "Experience/test/*.test.js"
   },
   "repository": {

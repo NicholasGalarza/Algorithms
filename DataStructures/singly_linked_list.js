@@ -7,11 +7,14 @@ class Node {
 
 class SinglyLinkedList {
   constructor(value) {
+    this.length = 0
     this.head = null
   }
 
   insert(value) {
     const node = new Node(value)
+    this.length++
+
     // base case if list is empty
     if (this.head === null) {
       this.head = node
@@ -33,12 +36,14 @@ class SinglyLinkedList {
 
     if (value === current.value) {
       this.head = this.head.next
+      this.length--
       return this
     }
 
     while (current.next !== null) {
       if (current.next.value === value) {
         current.next = current.next.next
+        this.length--
         return this
       }
       current = current.next

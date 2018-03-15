@@ -61,6 +61,7 @@ class DoublyLinkedList {
       }
       current = current.next
     }
+    return this // if not found, just return context
   }
 
   printAll() {

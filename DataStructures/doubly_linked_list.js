@@ -62,6 +62,15 @@ class DoublyLinkedList {
       current = current.next
     }
   }
+
+  printAll() {
+    let current = this.head
+    while (current !== null) {
+      console.log(current)
+      current = current.next
+    }
+    return this
+  }
 }
 
 module.exports.DoublyLinkedList = DoublyLinkedList

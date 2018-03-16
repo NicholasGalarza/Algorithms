@@ -14,6 +14,7 @@ const { LinkedListNode, printAll, values } = require('../../DataStructures/linke
 /*
  * @params {linked_list, value} head, pp
  * @return {linked_list}
+ * Runtime O(n) | Space O(n)
  */
 function partition(head, pp) {
   let leftList = new LinkedListNode(0),

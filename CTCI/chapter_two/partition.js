@@ -14,7 +14,7 @@
  * @return {linked_list}
  */
 function partition(list, x) {
-
+  
 }
 
 module.exports.partition = partition

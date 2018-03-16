@@ -1,16 +1,36 @@
 const { assert } = require('chai')
-const { SinglyLinkedList } = require('../../../DataStructures/singly_linked_list')
+const { LinkedListNode, printAll, values } = require('../../../DataStructures/linked_list_node')
 const { partition } = require('../partition')
 
 describe('Implement solution for partitioning a linked list around a specified value', () => {
-  let test = new SinglyLinkedList() // [3,2,1,5,8,5,10]
-  test.insert(3).insert(5).insert(8).insert(5).insert(10).insert(2).insert(1)
+  // [3, 5, 8, 5, 10, 2, 1](5) => [3, 2, 1, 5, 8, 5, 10]
+  let a, b, c, d, e, f, g
 
-  it('returns an object', () => {
-    assert.typeOf(partition(test1, 5), 'object')
+  beforeEach(() => {
+    a = new LinkedListNode(3)
+    b = new LinkedListNode(5)
+    c = new LinkedListNode(8)
+    d = new LinkedListNode(5)
+    e = new LinkedListNode(10)
+    f = new LinkedListNode(2)
+    g = new LinkedListNode(1)
+
+    // Linking the nodes together
+    a.next = b
+    b.next = c
+    c.next = d
+    d.next = e
+    e.next = f
+    f.next = g
+    g.next = null
   })
 
-  it('places lower values to left of partition and greater values to right of partition', () => {
-    assert.deepEqual(partition(test, 5), [3, 2, 1, 5, 8, 5, 10])
+  it('returns a linked_list_node object', () => {
+    assert.typeOf(partition(a, 5), 'object')
+  })
+
+  it('places smaller values to left of 5 and >= values to right of 5', () => {
+    const result = partition(a, 5)
+    assert.deepEqual(values(result), [3, 2, 1, 5, 8, 5, 10])
   })
 })

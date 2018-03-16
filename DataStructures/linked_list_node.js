@@ -1,11 +1,11 @@
 // constructor for linked_list node
-export function LinkedListNode(value) {
+function LinkedListNode(value) {
   this.value = value
   this.next = null
 }
 
 // @params {linked_list_node} node
-export function printAll(node) {
+function printAll(node) {
   while (node !== null) {
     console.log(node.value);
     node = node.next;
@@ -14,12 +14,17 @@ export function printAll(node) {
 
 // @params {linked_list_node} node
 // @return {array}
-export function values(node) {
+function values(node) {
   const temp = []
   while (node !== null) {
     temp.push(node.value)
+    node = node.next
   }
   return temp
 }
 
-export default { LinkedListNode, printAll, values }
+module.exports = {
+  LinkedListNode,
+  printAll,
+  values
+}

@@ -3,10 +3,11 @@ const { LinkedListNode, printAll, values } = require('../../../DataStructures/li
 const { partition } = require('../partition')
 
 describe('Implement solution for partitioning a linked list around a specified value', () => {
-  // [3, 5, 8, 5, 10, 2, 1](5) => [3, 2, 1, 5, 8, 5, 10]
+
   let a, b, c, d, e, f, g
 
   beforeEach(() => {
+    // [3, 5, 8, 5, 10, 2, 1](5) => [3, 2, 1, 5, 8, 5, 10]
     a = new LinkedListNode(3)
     b = new LinkedListNode(5)
     c = new LinkedListNode(8)
@@ -29,7 +30,7 @@ describe('Implement solution for partitioning a linked list around a specified v
     assert.typeOf(partition(a, 5), 'object')
   })
 
-  it('places smaller values to left of 5 and >= values to right of 5', () => {
+  it('places smaller values to left of 5 and >= values to right', () => {
     const result = partition(a, 5)
     assert.deepEqual(values(result), [3, 2, 1, 5, 8, 5, 10])
   })

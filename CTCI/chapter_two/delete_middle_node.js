@@ -12,7 +12,6 @@
  * Runtime O(n) | Space O(1)
  */
 function removeMiddleNode(list, value) {
-
   let current = list.head
   let ahead = current.next
 

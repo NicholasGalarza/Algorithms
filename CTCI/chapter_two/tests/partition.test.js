@@ -2,7 +2,7 @@ const { assert } = require('chai')
 const { LinkedListNode, printAll, values } = require('../../../DataStructures/linked_list_node')
 const { partition } = require('../partition')
 
-describe('Implement solution for partitioning a linked list around a specified value', () => {
+xdescribe('Implement solution for partitioning a linked list around a specified value', () => {
 
   let a, b, c, d, e, f, g
 

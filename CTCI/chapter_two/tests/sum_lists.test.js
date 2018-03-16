@@ -2,7 +2,7 @@ const { assert } = require('chai')
 const { LinkedListNode, printAll, values } = require('../../../DataStructures/linked_list_node')
 const { sumLists } = require('../sum_lists')
 
-describe('Implement the solution for sum lists', () => {
+xdescribe('Implement the solution for sum lists', () => {
   let a1, a2, a3,
     b1, b2, b3
 

@@ -21,11 +21,23 @@ const { LinkedListNode, printAll, values } = require('../../DataStructures/linke
  * Runtime O(n) | Space O(1)
  */
 function sumLists(L1, L2) {
+  // Append zeros until both lists are equal
+  let ptr1 = L1, ptr2 = L2
+  while (ptr1 !== null && ptr2 !== null) {
+    if (ptr1.next === null && ptr2.next !== null) {
+      ptr1.next = new LinkedListNode(0)
+    } else if (ptr2.next === null && ptr1.next !== null) {
+      ptr2.next = new LinkedListNode(0)
+    }
+    ptr1 = ptr1.next
+    ptr2 = ptr2.next
+  }
+
   let sum = new LinkedListNode(0),
     sumPtr = sum,
     carry = 0
 
-  while (L1 !== null || L2 !== null) {
+  while (L1 !== null && L2 !== null) {
     let x = L1 ? L1.value : 0
     let y = L2 ? L2.value : 0
 
@@ -38,6 +50,12 @@ function sumLists(L1, L2) {
 
     L1 = L1.next
     L2 = L2.next
+  }
+
+  // edge case if both values are same length and carry over exists.
+  if (carry > 0) {
+    sumPtr.next = new LinkedListNode(carry)
+    sumPtr = sumPtr.next
   }
 
   return sum.next

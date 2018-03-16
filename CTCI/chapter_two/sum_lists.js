@@ -15,12 +15,32 @@ const { LinkedListNode, printAll, values } = require('../../DataStructures/linke
  *  (2 -> 1 -> 9), resulting in 912
  */
 
-/*
- * @params{linked_list, linked_list} l1, l2
+/* In place solution
+ * @params{linked_list, linked_list} L1, L2
  * @return {linked_list}
+ * Runtime O(n) | Space O(1)
  */
-function sumLists (l1, l2) {
-  return l1
+function sumLists(L1, L2) {
+  let sum = new LinkedListNode(0),
+    sumPtr = sum,
+    carry = 0
+
+  while (L1 !== null || L2 !== null) {
+    let x = L1 ? L1.value : 0
+    let y = L2 ? L2.value : 0
+
+    let currentSum = x + y + carry
+    let valueToInsert = (currentSum >= 10) ? currentSum % 10 : currentSum
+    carry = (currentSum >= 10) ? 1 : 0
+
+    sumPtr.next = new LinkedListNode(valueToInsert)
+    sumPtr = sumPtr.next
+
+    L1 = L1.next
+    L2 = L2.next
+  }
+
+  return sum.next
 }
 
 module.exports.sumLists = sumLists

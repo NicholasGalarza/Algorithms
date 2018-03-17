@@ -4,6 +4,7 @@
 
 ### Resources Used
 
-Cracking The Coding Interview
-AlgoExpert.io
-Codewars
+1. Cracking The Coding Interview
+2. [AlgoExpert.io](https://www.algoexpert.io/product)
+3. [LeetCode](https://leetcode.com/)
+4. Codewars

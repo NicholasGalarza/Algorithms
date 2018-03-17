@@ -60,18 +60,18 @@ describe('Implement the algorithm to determine if two nodes intersect one anothe
     connectNodes([fo1, fo2, fo3, fo4, fo5, fo6, fo7, fo8])
     bo1 = new LinkedListNode('j')
     bo2 = new LinkedListNode('k')
-    bo3 = fo4 // insersection starts
-    bo4 = fo5
-    bo5 = fo6
+    bo3 = new LinkedListNode('l')
+    bo4 = fo7 // linked at Node('h')
+    bo5 = fo8
     connectNodes([bo1, bo2, bo3, bo4, bo5])
   })
 
-  it('returns a linked_list_node for the sets', () => {
+  it('returns a linked_list_node for the sets when an intersection occurs', () => {
     const result = intersect(a1, a2)
     assert.typeOf(result, 'object')
   })
-  
-  it('returns node `b` for the sets ', () => {
+
+  it('returns node `b` for the intersecting sets', () => {
     const result = intersect(a1, a2)
     assert.deepEqual(result, b1)
   })
@@ -81,9 +81,9 @@ describe('Implement the algorithm to determine if two nodes intersect one anothe
     assert.deepEqual(result, null)
   })
 
-  it('returns `` for two intersecting LLS with different lengths', () => {
+  it('returns `h` for two intersecting LLS with different lengths', () => {
     const result = intersect(fo1, bo1)
-    assert.deepEqual(result, fo4)
+    assert.deepEqual(result, fo7)
   })
 })
 

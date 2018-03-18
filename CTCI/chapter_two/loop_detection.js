@@ -11,6 +11,24 @@
  * @return {linked_list}
  */
 
-function detectLoop(list) { }
+function detectLoop(list) {
+  let slow = list.next, fast = list.next.next
+
+  while (slow !== fast) {
+    slow = slow.next
+    fast = (fast.next) ? fast.next.next : null
+    if (fast === null || slow === null) return null
+  }
+
+  fast = list // reset to head of list
+
+  while (slow !== fast) {
+    slow = slow.next
+    fast = fast.next
+    console.log('hi')
+  }
+
+  return slow
+}
 
 module.exports.detectLoop = detectLoop

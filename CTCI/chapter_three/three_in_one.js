@@ -20,7 +20,7 @@
  * 
  * 
  * growContainer acts as a `private` method which is only used
- * to double the size of each bucket, it will save the elements
+ * to double the size of each bucket. It will save the elements
  * inside of each bucket, double the containing array in size,
  * update the top, lower, and current pointers for each bucket,
  * and place the saved elements in their new respective positions.
@@ -125,7 +125,7 @@ class tripleStack {
     // implicitly double the size of each bucket {10, 20, 40, 80, ...}
     this.container = Array(this.container.length * 2).fill(null)
 
-    // update the pointers in the list now that container has increased capacity.
+    // update the boundaries in the list now that container has increased capacity.
     this.top1 = this.container.length / 3 - 1
     this.bot1 = this.container.length / 3 * 0
     this.top2 = this.container.length / 3 * 2 - 1

@@ -30,7 +30,7 @@
  *  bottom: {containerSize} / 3 * {bucket - 1}
  */
 
-class tripleStack {
+class TripleStack {
   constructor() {
     this.container = Array(30).fill(null)
     // keep track of pointers for start & end of buckets

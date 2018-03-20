@@ -12,7 +12,7 @@
  * minimum value is saved in parallel.
  */
 
-class stackMin {
+class StackMin {
   constructor() {
     this.stack = []
     this.minState = []
@@ -21,26 +21,30 @@ class stackMin {
 
   push(value) {
     this.stack.push(value)
-    this.curr++
-
-    if (this.minState.length) {
-      const previous = this.minState[curr - 1]
-      const min = previous < this.stack[curr]
-      this.minState.push(value)
+    
+    if (this.minState.length > 0) {
+      const previous = this.minState[this.curr - 1] 
+      const min = Math.min(previous, this.stack[this.curr])
+      this.minState.push(min)
     } else {
       this.minState.push(value)
     }
+
+    this.curr++
     return this
   }
 
   pop() {
-    const lastElement = this.stack.pop()
+    const element = this.stack.pop()
     const min = this.stack.pop()
     this.curr--
-    return { lastElement, min }
+    return { element, min }
   }
 
-  min() { return this.minState[this.curr] }
+  min() { 
+    const min = this.minState[this.curr - 1]
+    return min ? min : null
+  }
 }
 
-module.exports.stackMin = stackMin
+module.exports.StackMin = StackMin

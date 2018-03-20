@@ -15,7 +15,51 @@
  */
 
 class StackOfPlates {
-  constructor() {
+  constructor(cap) {
+    this.capacity = cap
+    this.piles = [[]]
+    this.currentPile = 0
+  }
 
+  _findOldestEmptyStack() {
+    for (let i = 0; i < this.piles.length; i++) {
+      const currentPile = this.piles[i]
+      if (currentPile.length < this.capacity) {
+        this.currentPile = i
+        return true
+      }
+    }
+    return false
+  }
+
+  push(value) {
+    // update pointer to oldest incomplete stack
+    this._findOldestEmptyStack()
+
+    if (this.piles[this.currentPile].length < this.capacity) {
+      this.piles[this.currentPile].push(value)
+    } else {
+      this.currentPile++
+      this.piles.push([]) // add new array
+      this.piles[this.currentPile].push(value)
+    }
+    return this
+  }
+
+  pop() {
+    // cycle down until popable stack is found
+    for (let i = this.currentPile; i >= 0; i--) {
+      if (this.piles[i].length) {
+        this.currentPile = i
+        return this.piles[this.currentPile].pop()
+      }
+    }
+    return []
+  }
+
+  popAt(idx) {
+    return (idx < this.piles.length) ? this.piles[idx].pop() : null
   }
 }
+
+module.exports.StackOfPlates = StackOfPlates

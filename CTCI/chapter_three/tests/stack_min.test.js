@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const { StackMin } = require('../stack_min')
 
-describe('Implement the solution for StackMin', () => {
+xdescribe('Implement the solution for StackMin', () => {
   let test
 
   beforeEach(() => {

@@ -10,7 +10,7 @@ class Queue2Stacks {
     this.N = []
   }
 
-  enqueue(value) {
+  push(value) {
     this.N.push(value)
     return this
   }
@@ -29,8 +29,10 @@ class Queue2Stacks {
     return this.O[this.O.length - 1]
   }
 
-  dequeue() {
+  pop() {
     this._shift()
-    return this.O[0].pop()
+    return this.O.pop()
   }
 }
+
+module.exports.Queue2Stacks = Queue2Stacks

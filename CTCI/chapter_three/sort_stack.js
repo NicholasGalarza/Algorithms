@@ -14,13 +14,32 @@ class MinStack {
     this.storage = []
     this.temp = []
   }
-  
-  push(value) {
 
+  push(value) {
+    // base case
+    if (this.storage.length === 0) {
+      this.storage.push(value)
+    } else {
+      // push values onto temp until value is placed in storage
+      while (value > this.peek() && this.storage.length > 0) {
+        const smaller = this.storage.pop()
+        this.temp.push(smaller) // [ 2, 3, 5]
+      }
+      
+      this.storage.push(value)
+
+      // push values from temp back into storage
+      while (this.temp.length !== 0) {
+        const element = this.temp.pop()
+        this.storage.push(element)
+      }
+    }
+
+    return this
   }
-  pop() { }
-  peek() { }
-  isEmpty() { }
+  pop() { return this.storage.pop() }
+  peek() { return (this.storage.length) ? this.storage[this.storage.length - 1] : [] }
+  isEmpty() { return this.storage.length === 0 }
 }
 
 module.exports.MinStack = MinStack

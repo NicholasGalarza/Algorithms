@@ -1,7 +1,7 @@
 const { MinStack } = require('../sort_stack')
 const { assert } = require('chai')
 
-describe('Implementation for MinStack', () => {
+xdescribe('Implementation for MinStack', () => {
   let test
 
   beforeEach(() => {
@@ -11,34 +11,42 @@ describe('Implementation for MinStack', () => {
 
   describe('Implement push()', () => {
     it('is able to store elements into the stack', () => {
-      assert.deepEqual(test.storage, [[2, 3, 5, 6]])
+      assert.deepEqual(test.storage, [6, 5, 3, 2])
     })
   })
 
-  xdescribe('Implement peek()', () => {
+  describe('Implement peek()', () => {
     it('is able to show the smallest value in the stack', () => {
-      assert.deepEqual(test.storage.peek(), 2)
-      assert.deepEqual(test.storage, [[2, 3, 5, 6]])
+      assert.deepEqual(test.peek(), 2)
+      assert.deepEqual(test.storage, [6, 5, 3, 2])
+    })
+
+    it('returns an `[]` if the stack is empty', () => {
+      test.pop()
+      test.pop()
+      test.pop()
+      test.pop()
+      assert.deepEqual(test.peek(), [])
     })
   })
 
-  xdescribe('Implement push()', () => {
+  describe('Implement push()', () => {
     it('removes the smallest value in the stack', () => {
-      assert.deepEqual(test.storage.pop(), 2)
+      assert.deepEqual(test.pop(), 2)
     })
 
     it('removes the next value too', () => {
       test.pop() // removes 2
-      assert.deepEqual(test.storage.pop(), 3)
+      assert.deepEqual(test.pop(), 3)
     })
   })
 
-  xdescribe('Implement isEmpty()', () => {
-    assert('returns `false` when the stack has elements', () => {
+  describe('Implement isEmpty()', () => {
+    it('returns `false` when the stack has elements', () => {
       assert.deepEqual(test.isEmpty(), false)
     })
 
-    assert('returns `true` when the stack has no elements', () => {
+    it('returns `true` when the stack has no elements', () => {
       // remove all elements from the sample space
       test.pop()
       test.pop()

@@ -9,19 +9,21 @@
  * @return {boolean}
  */
 function routeFinder(graph, start, end) {
-  const nodes = depthFirstTraverse(graph, [], [start, end])
-  return nodes.includes(start) && nodes.includes(end)
+  const found = depthFirstTraverse(graph, [start, end], [false, false])
+  return found[0] && found[1]
 }
 
-function depthFirstTraverse(root, array = [], values) {
+function depthFirstTraverse(root, values = [], found) {
   if (root === null) return
 
-  array.push(root.value)
+  if (values[0] == root.value) found[0] = true
+  else if (values[1] == root.value) found[1] = true
+
   for (const child of root.children) {
-    depthFirstTraverse(child, array)
+    depthFirstTraverse(child, values, found)
   }
 
-  return array
+  return found
 }
 
 module.exports.routeFinder = routeFinder

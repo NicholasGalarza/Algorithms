@@ -2,7 +2,7 @@ const { GraphNode } = require('../../../DataStructures/graph_node')
 const { assert } = require('chai')
 const { routeFinder } = require('../route_between_nodes')
 
-describe('Implement method to determine if route exists between two nodes', () => {
+xdescribe('Implement method to determine if route exists between two nodes', () => {
 
   const test = new GraphNode('a')
   test.addChild('b').addChild('c')

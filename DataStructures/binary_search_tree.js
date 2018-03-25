@@ -8,7 +8,7 @@ class BST {
   insert(value) {
     const node = new BST(value)
     let current = this
-    
+
     if (value <= this.value) {
       if (this.left) {
         current = this.left
@@ -24,11 +24,9 @@ class BST {
         this.right = node
       }
     }
-    
+
     return this
   }
 }
 
-const root = new BST(3)
-root.insert(5).insert(2).insert(4).insert(6)
-console.log(root)
+module.exports.BST = BST

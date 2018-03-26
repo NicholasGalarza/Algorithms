@@ -9,6 +9,6 @@ describe('Implement the minimal tree', () => {
   it('returns the desired array', () => {
     const result = minimalTree(test).breadthFirstSearch()
     console.log('hi', result)
-    assert.deepEqual(result, [0, -3, 9, -10, 5])
+    assert.deepEqual(result, [0, -10, 5, -3, 9])
   })
 })

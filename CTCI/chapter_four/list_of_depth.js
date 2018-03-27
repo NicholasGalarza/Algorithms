@@ -9,7 +9,8 @@
 /*
  * Runtime O(n) | Space O(n)
  */
-function listOfDepths(tree) {
+function listOfDepth(tree) {
+  console.log(traverseAndLink(0, tree, {}))
   return traverseAndLink(0, tree, {})
 }
 
@@ -47,4 +48,4 @@ class SinglyLinkedList {
   }
 }
 
-module.exports.listOfDepths = listOfDepths
+module.exports.listOfDepth = listOfDepth

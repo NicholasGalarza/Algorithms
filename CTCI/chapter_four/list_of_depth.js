@@ -10,7 +10,6 @@
  * Runtime O(n) | Space O(n)
  */
 function listOfDepth(tree) {
-  console.log(traverseAndLink(0, tree, {}))
   return traverseAndLink(0, tree, {})
 }
 

@@ -12,7 +12,7 @@ function checkBalanced(tree) {
 }
 
 function checkHeight(root) {
-  if (root === null) return -1
+  if (root === null) return 0
 
   let leftHeight = checkHeight(root.left)
   if (leftHeight === -1) return -1

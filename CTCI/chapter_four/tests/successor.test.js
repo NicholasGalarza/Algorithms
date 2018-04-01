@@ -11,12 +11,12 @@ describe('Implement the solution to find successor of binary tree', () => {
 
   it('determines that 10 is the successor of 8', () => {
     const result = test.left.right.left.value
-    assert.equal(successor(test, 10), result)
+    assert.equal(successor(test, 8), result)
   })
 
   it('determines that 12 is the successor of 10', () => {
     const result = test.left.right.value
-    assert.equal(successor(test, 12), result)
+    assert.equal(successor(test, 10), result)
   })
 
   it('determines that 20 is the succesor of 14', () => {

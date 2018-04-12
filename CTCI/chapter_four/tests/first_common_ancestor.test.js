@@ -21,7 +21,7 @@ describe('Implement the solution for first common ancestor', () => {
   })
 
   it('returns 20 as the ancestor for nodes: 1 & 25', () => {
-    const result = LCA(test, 1, 15)
+    const result = LCA(test, 1, 25)
     assert.equal(result.value, 20)
   })
 

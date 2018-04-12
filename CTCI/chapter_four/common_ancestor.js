@@ -12,6 +12,16 @@
  */
 
 // Runtime O(n) | Space O(n) - recursive stack
-function LCA(root, x, y) { }
+function LCA(root, x, y) {
+  if (root === null) return null
+  if (root.value == x || root.value == y) return root
+
+  const left = LCA(root.left, x, y)
+  const right = LCA(root.right, x, y)
+
+  if (left && right) return root
+  if (!left && !right) return null
+  return left ? left : right
+}
 
 module.exports.LCA = LCA // least common ancestor

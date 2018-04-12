@@ -1,7 +1,7 @@
 const { assert } = require('chai')
 const { successor } = require('../successor')
 
-describe('Implement the solution to find successor of binary tree', () => {
+xdescribe('Implement the solution to find successor of binary tree', () => {
   let test
 
   beforeEach(() => {

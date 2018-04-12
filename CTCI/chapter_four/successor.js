@@ -18,7 +18,6 @@
  */
 // screw this problem :/
 function successor(tree, target) {
-  console.log(tree.value)
   return findSuccessorHelper(tree, target, tree.value)
 }
 
@@ -45,6 +44,7 @@ function findSuccessorHelper(tree, target, succ) {
 function getMin(root) {
   let current = root
   if (current.right) {
+    current = current.right
     while (current.left !== null) {
       current = current.left
     }

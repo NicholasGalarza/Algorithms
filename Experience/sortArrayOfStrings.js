@@ -5,7 +5,7 @@
  * characters of the alphabet.
  */
 
-// O(n^2) Complexity | O(n^2) Space
+// O(n^2) Complexity | O(n) Space
 class TrieNode {
 
   constructor() {

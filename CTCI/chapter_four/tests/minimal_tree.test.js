@@ -1,4 +1,3 @@
-const { BST } = require('../../../DataStructures/binary_search_tree')
 const { assert } = require('chai')
 const { minimalTree } = require('../minimal_tree')
 
